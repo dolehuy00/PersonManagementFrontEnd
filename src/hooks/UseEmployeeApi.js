@@ -1,8 +1,8 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { getPageEmployee } from 'services/management/EmployeeApi';
+import { getPageEmployee } from 'services/management/EmployeeApi.js';
 
-export const useGetPageEmployee = () => {
+export const useGetPageEmployee = (page, pageSize) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ export const useGetPageEmployee = () => {
         const getData = async () => {
             setLoading(true);
             try {
-                const result = await getPageEmployee(1, 10);
+                const result = await getPageEmployee(page, pageSize);
                 if (isMounted.current) {
                     setData(result);
                     setLoading(false);
@@ -31,7 +31,7 @@ export const useGetPageEmployee = () => {
         return () => {
             isMounted.current = false;
         };
-    }, []);
+    }, [page, pageSize]);
 
     return { data, loading, error };
 };

@@ -11,8 +11,8 @@ export const getPageEmployee = async (pageNumber, pageSize) => {
                 'Authorization': `Bearer ${token}`
             }
         });
-        return response.data.results;
+        return response.data;
     } catch (error) {
-        
+        console.log(error)
     }
 };

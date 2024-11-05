@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPopper } from "@popperjs/core";
 
-const NotificationDropdown = () => {
+const ItemPerPageDropdown = ({itemPerPage, onSelectChange }) => {
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
   const btnDropdownRef = useRef();
   const popoverDropdownRef = useRef();
+  const arrayItems = [5, 10, 30, 50, 100]
 
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "left-start",
+      placement: "top-start",
     });
     setDropdownPopoverShow(true);
   };
@@ -43,19 +44,23 @@ const NotificationDropdown = () => {
     };
   }, [dropdownPopoverShow]);
 
+  const handleSelect = (itemPerPage) => {
+    onSelectChange(itemPerPage);
+  };
+
   return (
     <>
-      <a
-        className="text-blueGray-500 py-1 px-3"
-        href="#pablo"
+      <button
+        className="text-lightBlue-500 bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button"
         ref={btnDropdownRef}
         onClick={(e) => {
           e.preventDefault();
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        <i className="fas fa-ellipsis-v"></i>
-      </a>
+        <i className="far fa-hand-paper"></i>  Item per page: {itemPerPage}
+      </button>
       <div
         ref={popoverDropdownRef}
         className={
@@ -63,36 +68,24 @@ const NotificationDropdown = () => {
           "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-max"
         }
       >
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-          <i className="fas fa-eye mr-1"></i> View
-        </a>
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-        <i className="fas fa-edit mr-1"></i> Edit
-        </a>
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-        <i className="fas fa-lock mr-1"></i> Lock
-        </a>
+        {arrayItems.map((value) => (
+          <a
+            href="#pablo"
+            className={
+              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            }
+            onClick={(e) => {
+              e.preventDefault();
+              closeDropdownPopover();
+              handleSelect(value)
+            }}
+          >
+            Item per page: {value}
+          </a>
+        ))}
       </div>
     </>
   );
 };
 
-export default NotificationDropdown;
+export default ItemPerPageDropdown;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useGetPageEmployee } from "hooks/UseEmployeeApi.js";
 import Pagination from "components/Pagination/Pagination.js";
 import ItemPerPageDropdown from "components/Dropdowns/ItemPerPageDropdown.js";
+import FilterPopup from "components/Popups/FilterPopup.js";
 
 // components
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
@@ -31,12 +32,12 @@ export default function CardTableEmployee({ color }) {
       <div
         className={
           "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
-          (color === "light" ? "bg-white" : "bg-lightBlue-900 text-white")
+          (color === "light" ? "bg-white" : "bg-sky-900 text-white")
         }
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 justify-start">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -45,6 +46,9 @@ export default function CardTableEmployee({ color }) {
               >
                 Employees
               </h3>
+            </div>
+            <div className="flex justify-end">
+              <FilterPopup />
             </div>
           </div>
         </div>
@@ -58,7 +62,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Id
@@ -68,7 +72,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Name
@@ -78,7 +82,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Basic Salary
@@ -88,7 +92,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Account Id
@@ -98,7 +102,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Department
@@ -108,7 +112,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 >
                   Status
@@ -118,7 +122,7 @@ export default function CardTableEmployee({ color }) {
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                      : "bg-sky-800 text-sky-300 border-sky-700")
                   }
                 ></th>
               </tr>

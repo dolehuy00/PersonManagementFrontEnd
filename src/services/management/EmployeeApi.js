@@ -13,6 +13,6 @@ export const getPageEmployee = async (pageNumber, pageSize) => {
         });
         return response.data;
     } catch (error) {
-        console.log(error)
+        throw error;
     }
 };

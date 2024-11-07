@@ -47,8 +47,8 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                             href="#prev-double"
                             className={
                                 pageIndex === 1
-                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-200 text-white bg-lightBlue-200"
-                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-lightBlue-500 text-lightBlue-500"
+                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-sky-200 text-white bg-sky-200"
+                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-sky-500 text-sky-500"
                             }
                             onClick={(e) => {
                                 e.preventDefault();
@@ -64,8 +64,8 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                             href="#prev"
                             className={
                                 pageIndex === 1
-                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-200 text-white bg-lightBlue-200"
-                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-lightBlue-500 text-lightBlue-500"}
+                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-sky-200 text-white bg-sky-200"
+                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-sky-500 text-sky-500"}
                             onClick={(e) => {
                                 e.preventDefault();
                                 if (pageIndex !== 1) handlePrevPage();
@@ -79,7 +79,7 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                         <li>
                             <a
                                 href="#threedot"
-                                className="text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full text-lightBlue-500"
+                                className="text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full text-sky-500"
                                 onClick={(e) => {
                                     e.preventDefault();
                                 }}
@@ -98,8 +98,8 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                                     href={`#page-${pageNum}`}
                                     onClick={(e) => { e.preventDefault(); onPageChange(pageNum); }}
                                     className={`text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border ${pageIndex === pageNum
-                                        ? "text-white bg-lightBlue-500"
-                                        : "text-lightBlue-500 bg-white"
+                                        ? "text-white bg-sky-500"
+                                        : "text-sky-500 bg-white"
                                         }`}
                                 >
                                     {pageNum}
@@ -113,7 +113,7 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                         <li>
                             <a
                                 href="#threedot"
-                                className="text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full text-lightBlue-500"
+                                className="text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full text-sky-500"
                                 onClick={(e) => {
                                     e.preventDefault();
                                 }}
@@ -127,8 +127,8 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                             href="#next"
                             className={
                                 pageIndex === totalPage
-                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-200 text-white bg-lightBlue-200"
-                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-lightBlue-500 text-lightBlue-500"}
+                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-sky-200 text-white bg-sky-200"
+                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-sky-500 text-sky-500"}
                             onClick={(e) => {
                                 e.preventDefault();
                                 if (pageIndex !== totalPage) handleNextPage();
@@ -142,8 +142,8 @@ const Pagination = ({ pageIndex, totalPage, maxPageView, onPageChange }) => {
                             href="#next-double"
                             className={
                                 pageIndex === totalPage
-                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-200 text-white bg-lightBlue-200"
-                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-lightBlue-500 text-lightBlue-500"}
+                                    ? "text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-sky-200 text-white bg-sky-200"
+                                    : "text-xs font-semibold w-8 h-8 flex items-center justify-center mx-1 rounded-full border border-sky-500 text-sky-500"}
                             onClick={(e) => {
                                 e.preventDefault();
                                 if (pageIndex !== totalPage) handlePageClick(totalPage);
